@@ -7,21 +7,12 @@ using UnityEngine.Serialization;
 [Serializable]
 public class NumericDataType
 {
+	public int value;
+
 	[Serializable]
 	public class Element
 	{
-		public int value;
 		public string equality;
-
-		public bool IsEmpty()
-		{
-			if (value == 0 || string.IsNullOrEmpty(equality))
-			{
-				return true;
-			}
-
-			return false;
-		}
 	}
 
 	public Element[] elements;

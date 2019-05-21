@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISerializable
+public interface ISerializable<T>
 {
 	void Serialize();
-	object Deserialize();
+	T Deserialize();
 }

@@ -6,37 +6,24 @@ using System.IO;
 using System.Text;
 
 [Serializable]
-public class GameData : MonoBehaviour, ISerializable
+public class GameData : ISerializable<GameData>
 {
 	public NumericDataType[] NineNumberDatas;
 	public NumericDataType[] IncreaseDecreaseDatas;
 
-	private string dataPath;
+	private string _dataPath;
 
-	private void Start()
+	public void SetDataPath(string dataPath)
 	{
-		string fileName = "gameData.txt";
-		dataPath = $"{Application.persistentDataPath}/{fileName}";
-		Debug.Log(dataPath);
-
-		int testCount = 2;
-		NineNumberDatas = new NumericDataType[testCount];
-		IncreaseDecreaseDatas = new NumericDataType[testCount];
-		for (int i = 0; i < testCount; i++)
-		{
-			NineNumberDatas[i] = new NumericDataType(9);
-			IncreaseDecreaseDatas[i] = new NumericDataType(2);
-		}
-
-		Serialize();
+		_dataPath = dataPath;
 	}
 
-	public object Deserialize()
+	public GameData Deserialize()
 	{
-		if (File.Exists(dataPath))
+		if (File.Exists(_dataPath))
 		{
-			string dataAsJson = File.ReadAllText(dataPath);
-			object data = JsonUtility.FromJson<object>(dataAsJson);
+			string dataAsJson = File.ReadAllText(_dataPath);
+			GameData data = JsonUtility.FromJson<GameData>(dataAsJson);
 			if (data != null)
 			{
 				return data;
@@ -58,7 +45,7 @@ public class GameData : MonoBehaviour, ISerializable
 	{
 		string json = JsonUtility.ToJson(this, true);
 
-		using (StreamWriter streamWriter = new StreamWriter(dataPath, false))
+		using (StreamWriter streamWriter = new StreamWriter(_dataPath, false))
 		{
 			streamWriter.Write(json);
 			streamWriter.Close();

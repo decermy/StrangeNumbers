@@ -220,21 +220,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2071731921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d947edbfdf10f3649a11516aadc1d69f, type: 3}
+  m_Script: {fileID: 11500000, guid: c4b63cfa48ddb7d4b9c1f7be6a292db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NineNumberDatas:
-  - elements: []
-  - elements: []
-  - elements: []
-  - elements: []
-  - elements: []
-  IncreaseDecreaseDatas:
-  - elements: []
-  - elements: []
-  - elements: []
-  - elements: []
-  - elements: []
+  gameData:
+    NineNumberDatas: []
+    IncreaseDecreaseDatas: []
 --- !u!4 &2071731923
 Transform:
   m_ObjectHideFlags: 0
