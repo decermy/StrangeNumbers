@@ -23,12 +23,11 @@ public class GameDataTest : MonoBehaviour
 			gameData.IncreaseDecreaseDatas[i] = new NumericDataType(2);
 		}
 
-		gameData.SetDataPath(dataPath);
-		gameData.Serialize();
+		//gameData.SetDataPath(dataPath);
+		//gameData.Serialize();
 
-		GameData data = new GameData();
-		data.SetDataPath(dataPath);
-		data = gameData.Deserialize();
+		gameData.SetDataPath(dataPath);
+		GameData data = gameData.Deserialize();
 
 		gameData.NineNumberDatas = data.NineNumberDatas;
 		gameData.IncreaseDecreaseDatas = data.IncreaseDecreaseDatas;

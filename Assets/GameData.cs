@@ -35,7 +35,7 @@ public class GameData : ISerializable<GameData>
 		}
 		else
 		{
-			Debug.LogError("Cannot load game data!");
+			Debug.LogError($"Cannot load game data! {_dataPath}");
 		}
 
 		return null;
@@ -45,7 +45,7 @@ public class GameData : ISerializable<GameData>
 	{
 		string json = JsonUtility.ToJson(this, true);
 
-		using (StreamWriter streamWriter = new StreamWriter(_dataPath, false))
+		using (StreamWriter streamWriter = new StreamWriter(_dataPath, false, Encoding.Unicode))
 		{
 			streamWriter.Write(json);
 			streamWriter.Close();
