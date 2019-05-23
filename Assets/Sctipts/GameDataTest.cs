@@ -31,5 +31,16 @@ public class GameDataTest : MonoBehaviour
 
 		gameData.NineNumberDatas = data.NineNumberDatas;
 		gameData.IncreaseDecreaseDatas = data.IncreaseDecreaseDatas;
+
+		NumericDataType numericDataType = gameData.NineNumberDatas[1];
+		QuestionGame questionGame = new QuestionGame(numericDataType, 0);
+
+		string value, question, rightAnswer;
+		string[] answers;
+
+		questionGame.CreateQuestion(out value, out question, out answers, out rightAnswer, 4);
+
+		Debug.Log($"value: {value}, question: {question}, right: {rightAnswer}, all answers: {answers[0]} and {answers[1]} ");
+		Debug.Log($"and {answers[2]} and {answers[3]} ");
 	}
 }
