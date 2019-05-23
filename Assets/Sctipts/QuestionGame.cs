@@ -50,6 +50,8 @@ public class QuestionGame
 		{
 			OperationPoint operationPoint = new OperationPoint(adding.ElementAt(i), operation);
 			operationPoints.Add(operationPoint);
+
+			Debug.Log($"operation : {operationPoint.position} '{operationPoint.operation}'");
 		}
 	}
 
@@ -65,7 +67,7 @@ public class QuestionGame
 		CollectTo(operationPoints, additionResult, "+");
 		CollectTo(operationPoints, subtractionResult, "-");
 		CollectTo(operationPoints, multiplicationResult, "×");
-		CollectTo(operationPoints, additionResult, "/");
+		CollectTo(operationPoints, divisionResult, "/");
 
 		return operationPoints[Random.Range(0, operationPoints.Count)];
 	}
