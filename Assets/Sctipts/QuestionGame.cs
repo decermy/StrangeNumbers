@@ -20,28 +20,38 @@ public class QuestionGame
 		}
 	}
 
+	public class QuestionData
+	{
+		public string value, question, rightAnswer;
+		public string[] answers;
+	}
+
 	public QuestionGame(NumericDataType numericData, int questionVariant)
 	{
 		_numericData = numericData;
 		_questionVariant = questionVariant;
 	}
 
-	public void CreateQuestion(out string value, out string question, out string[] answers, out string rightAnswer, int answersCount = 2)
+	public QuestionData CreateQuestion()
 	{
-		value = _numericData.value.ToString();
+		QuestionData questionData = new QuestionData();
+
+		questionData.value = _numericData.value.ToString();
 
 		string equality = _numericData.elements[_questionVariant].equality;
 		List<OperationPoint> operationPoints = new List<OperationPoint>();
 
 		OperationPoint lostOperation = FindOperationForLost(equality, operationPoints);
 
-		question = string.Copy(equality);
-		question = question.Remove(lostOperation.position, 1);
-		question = question.Insert(lostOperation.position, " ? ");
+		questionData.question = string.Copy(equality);
+		questionData.question = questionData.question.Remove(lostOperation.position, 1);
+		questionData.question = questionData.question.Insert(lostOperation.position, " ? ");
 
-		answers = CreateAnswers(answersCount, lostOperation);
+		questionData.answers = CreateAnswers(2, lostOperation);
 
-		rightAnswer = lostOperation.operation;
+		questionData.rightAnswer = lostOperation.operation;
+
+		return questionData;
 	}
 
 	private void CollectTo(List<OperationPoint> operationPoints, IEnumerable<int> adding, string operation)
@@ -51,7 +61,7 @@ public class QuestionGame
 			OperationPoint operationPoint = new OperationPoint(adding.ElementAt(i), operation);
 			operationPoints.Add(operationPoint);
 
-			Debug.Log($"operation : {operationPoint.position} '{operationPoint.operation}'");
+			//Debug.Log($"operation : {operationPoint.position} '{operationPoint.operation}'");
 		}
 	}
 

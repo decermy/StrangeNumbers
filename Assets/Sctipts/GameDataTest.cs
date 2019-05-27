@@ -38,9 +38,8 @@ public class GameDataTest : MonoBehaviour
 		string value, question, rightAnswer;
 		string[] answers;
 
-		questionGame.CreateQuestion(out value, out question, out answers, out rightAnswer, 4);
+		//questionGame.CreateQuestion(out value, out question, out answers, out rightAnswer, 2);
 
-		Debug.Log($"value: {value}, question: {question}, right: {rightAnswer}, all answers: {answers[0]} and {answers[1]} ");
-		Debug.Log($"and {answers[2]} and {answers[3]} ");
+		//Debug.Log($"value: {value}, question: {question}, right: {rightAnswer}, all answers: {answers[0]} and {answers[1]} ");
 	}
 }
