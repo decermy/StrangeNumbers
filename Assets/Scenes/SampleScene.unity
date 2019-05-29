@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 214694822}
   - component: {fileID: 214694821}
   m_Layer: 5
-  m_Name: Button
+  m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,6 +1101,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469375439}
   m_CullTransparentMesh: 0
+--- !u!1 &488924275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488924276}
+  - component: {fileID: 488924277}
+  m_Layer: 0
+  m_Name: QuestGameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &488924276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488924275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 314.2452, y: 1002.3708, z: 16.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &488924277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488924275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b238b91f9cd85545b92ec036886dcf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionGameHolder: {fileID: 1833494540}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3106,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780573758}
   m_CullTransparentMesh: 0
+--- !u!1 &1833494539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1833494541}
+  - component: {fileID: 1833494540}
+  m_Layer: 0
+  m_Name: QuestGameHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1833494540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833494539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099e0517d34f22f4ea444448f75f5758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSymbolPrefab: {fileID: 8256462067744164160, guid: 33d1adfb96b991246a85b20a79fc3173,
+    type: 3}
+  questSymbolPrefab: {fileID: 1645983567916934689, guid: 5a0e6d8932195c34f8e6204ad9efb47d,
+    type: 3}
+  valueTextParent: {fileID: 1212122127}
+  questionTextParent: {fileID: 995979914}
+  r_answer: {fileID: 469375441}
+  l_answer: {fileID: 979163724}
+--- !u!4 &1833494541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833494539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 314.2452, y: 1002.3708, z: 16.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1954624687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3231,7 +3326,7 @@ GameObject:
   - component: {fileID: 2071731923}
   - component: {fileID: 2071731922}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3249,6 +3344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b63cfa48ddb7d4b9c1f7be6a292db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questionGameController: {fileID: 488924277}
   gameData:
     NineNumberDatas: []
     IncreaseDecreaseDatas: []
@@ -3279,7 +3375,7 @@ GameObject:
   - component: {fileID: 2090025966}
   - component: {fileID: 2090025965}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

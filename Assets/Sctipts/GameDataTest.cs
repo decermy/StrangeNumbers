@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameDataTest : MonoBehaviour
 {
+	public QuestionGameController questionGameController;
+
 	public GameData gameData;
 
 	private string dataPath;
@@ -33,13 +35,7 @@ public class GameDataTest : MonoBehaviour
 		gameData.IncreaseDecreaseDatas = data.IncreaseDecreaseDatas;
 
 		NumericDataType numericDataType = gameData.NineNumberDatas[1];
-		QuestionGame questionGame = new QuestionGame(numericDataType, 0);
 
-		string value, question, rightAnswer;
-		string[] answers;
-
-		//questionGame.CreateQuestion(out value, out question, out answers, out rightAnswer, 2);
-
-		//Debug.Log($"value: {value}, question: {question}, right: {rightAnswer}, all answers: {answers[0]} and {answers[1]} ");
+		questionGameController.SetQuest(numericDataType, 1);
 	}
 }
